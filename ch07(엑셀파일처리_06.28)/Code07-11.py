@@ -17,4 +17,5 @@ for i in range(w) :
         photoG[i][k] = g
         photoB[i][k] = b
 
+
 print('[50][50] 위치의 RGB 값 : ', photoR[50][50], photoG[50][50], photoB[50][50] )

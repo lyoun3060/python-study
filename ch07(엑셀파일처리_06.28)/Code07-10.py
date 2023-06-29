@@ -24,5 +24,5 @@ for wsName in wsheetList :
                 outCell.number_format = copy(inCell.number_format)
                 outCell.alignment = copy(inCell.alignment)
 
-outWorkbook.save('c:/CookAnalysis/Excel/singer_copy.xlsx')
+outWorkbook.save('c:/CookAnalysis/Excel/singer_copy_0629.xlsx')
 print("Save. OK~")

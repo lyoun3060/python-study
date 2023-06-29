@@ -16,13 +16,20 @@ for i in range(w) :
         photoG[i][k] = g
         photoB[i][k] = b
 
-workbook = xlsxwriter.Workbook('C:/CookAnalysis/Excel/picture06_art.xlsx')
+workbook = xlsxwriter.Workbook('C:/CookAnalysis/Excel/picture06_art_0629.xlsx')
 worksheet = workbook.add_worksheet('photoRGB')
 
+
+#옵션, 각셀의 크기를 작게 조정.
 worksheet.set_column(0, w - 1, 1.0)  # 약 0.34
 for i in range(h):
     worksheet.set_row(i, 9.5)  # 약 0.35
 
+#10진수 -> 16진수로 변환하는 작업
+#해당 HEX결과의 값이 0xFF 형식임
+#16진수로 변환했는데 15이하로 나오는 경우, 0xOO의 형식이 0xO이렇게 2자리가 아니라 1자리가 나옴
+#만약, 2자리가 아니라 1자리이면 0F0C03의 식으로 적혀야 하는데 FC3으로 앞의 0이 삭제됨
+# 따라서 앞에 0을 추가해줘야함
 for i in range(w) :
     for k in range(h) :
         hexR = hex(photoR[i][k])
